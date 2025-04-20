@@ -1,0 +1,19 @@
+<div class="relative inline-block" (document:click)="cerrar()">
+  <button (click)="toggle(); $event.stopPropagation()" class="text-white hover:text-blue-400">
+    {{ icon }}
+  </button>
+
+  <div
+    *ngIf="abierto"
+    class="absolute right-0 mt-2 w-36 bg-gray-800 border border-gray-700 rounded shadow z-50"
+  >
+    <button
+      *ngFor="let a of acciones"
+      (click)="ejecutar(a.action)"
+      class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700"
+      [ngClass]="{'text-red-400': a.label == 'Eliminar'}"
+    >
+      {{ a.label }}
+    </button>
+  </div>
+</div>

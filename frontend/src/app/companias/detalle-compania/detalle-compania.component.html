@@ -1,0 +1,97 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-[#000000cf] bg-opacity-60">
+  <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-5xl relative text-white overflow-y-auto max-h-[90vh]">
+    <!-- Botón cerrar -->
+    <button (click)="cerrar()" class="absolute top-4 right-4 text-xl text-white hover:text-red-400">✕</button>
+
+    <!-- Título -->
+    <h2 class="text-2xl font-semibold mb-6">Detalle de la compañía</h2>
+
+    <!-- Info principal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-8">
+      <div class="space-y-1">
+        <p><span class="text-gray-400">Nombre:</span><br><span class="font-medium">{{ compania?.nombre }}</span></p>
+        <p><span class="text-gray-400">Sector:</span><br><span class="font-medium">{{ compania?.sector }}</span></p>
+        <p><span class="text-gray-400">Teléfono:</span><br><span class="font-medium">{{ compania?.telefono }}</span></p>
+        <p><span class="text-gray-400">Dirección:</span><br><span class="font-medium">{{ compania?.direccion }}</span></p>
+      </div>
+
+      <div class="space-y-1">
+        <p><span class="text-gray-400">Ciudad:</span><br><span class="font-medium">{{ compania?.ciudad?.nombre }}</span></p>
+        <p><span class="text-gray-400">Departamento:</span><br><span class="font-medium">{{ compania?.departamento?.nombre }}</span></p>
+        <p><span class="text-gray-400">Activos:</span><br><span class="font-medium">${{ compania?.activos }}</span></p>
+        <p><span class="text-gray-400">Pasivos:</span><br><span class="font-medium">${{ compania?.pasivos }}</span></p>
+      </div>
+    </div>
+
+    <!-- Selector de Tabs -->
+    <div class="flex space-x-4 mb-4 border-b border-gray-700">
+      <button
+        (click)="tabSeleccionado = 'usuarios'"
+        [ngClass]="{
+          'text-blue-400 border-b-2 border-blue-400': tabSeleccionado === 'usuarios',
+          'text-gray-400 hover:text-white': tabSeleccionado !== 'usuarios'
+        }"
+        class="px-4 py-2 text-sm font-medium focus:outline-none"
+      >
+        Usuarios
+      </button>
+
+      <button
+        (click)="tabSeleccionado = 'productos'"
+        [ngClass]="{
+          'text-blue-400 border-b-2 border-blue-400': tabSeleccionado === 'productos',
+          'text-gray-400 hover:text-white': tabSeleccionado !== 'productos'
+        }"
+        class="px-4 py-2 text-sm font-medium focus:outline-none"
+      >
+        Productos
+      </button>
+    </div>
+
+    <!-- Tabla de Usuarios -->
+    <div *ngIf="tabSeleccionado === 'usuarios'" class="overflow-auto max-h-64 border border-gray-700 rounded">
+      <table class="w-full text-sm text-left border-collapse">
+        <thead class="bg-gray-700">
+          <tr>
+            <th class="px-4 py-2 border border-gray-600">Nombre</th>
+            <th class="px-4 py-2 border border-gray-600">Apellido</th>
+            <th class="px-4 py-2 border border-gray-600">Cargo</th>
+            <th class="px-4 py-2 border border-gray-600">Telefono</th>
+            <th class="px-4 py-2 border border-gray-600">Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of compania.usuarios" class="hover:bg-gray-700">
+            <td class="px-4 py-2 border border-gray-700">{{ u.nombre }}</td>
+            <td class="px-4 py-2 border border-gray-700">{{ u.apellido }}</td>
+            <td class="px-4 py-2 border border-gray-700">{{ u.cargo }}</td>
+            <td class="px-4 py-2 border border-gray-700">{{ u.telefono }}</td>
+            <td class="px-4 py-2 border border-gray-700">{{ u.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tabla de Productos -->
+    <div *ngIf="tabSeleccionado === 'productos'" class="overflow-auto max-h-64 border border-gray-700 rounded">
+      <table class="w-full text-sm text-left border-collapse">
+        <thead class="bg-gray-700">
+          <tr>
+            <th class="px-4 py-2 border border-gray-600">Nombre</th>
+            <th class="px-4 py-2 border border-gray-600">Categoría</th>
+            <th class="px-4 py-2 border border-gray-600">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of compania.productos" class="hover:bg-gray-700">
+            <td class="px-4 py-2 border border-gray-700">{{ p.nombre }}</td>
+            <td class="px-4 py-2 border border-gray-700">{{ p.categoria }}</td>
+            <td class="px-4 py-2 border border-gray-700">${{ p.precio }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+

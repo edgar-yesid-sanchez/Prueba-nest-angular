@@ -1,0 +1,79 @@
+<section class="flex items-center justify-between mb-4">
+  <h1 class="text-2xl font-bold">Usuarios</h1>
+  <button (click)="agregar()" class="bg-green-600 px-4 py-1 rounded text-white cursor-pointer">
+    Crear
+  </button>
+</section>
+
+<div *ngIf="loading" class="fixed inset-0 z-50 flex items-center justify-center bg-[#000000cf]">
+  <app-loader />
+  Cargando usuarios...
+</div>
+
+<table *ngIf="!loading" class="w-full text-left border-collapse border border-gray-700 text-white text-sm">
+  <thead class="bg-gray-800">
+    <tr>
+      <th class="p-3 border border-gray-700">Nombre</th>
+      <th class="p-3 border border-gray-700">Correo</th>
+      <th class="p-3 border border-gray-700">Cargo</th>
+      <th class="p-3 border border-gray-700">Compañía</th>
+      <th class="p-3 border border-gray-700 w-1 whitespace-nowrap">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of usuarios" class="hover:bg-gray-800">
+      <td class="p-3 border border-gray-700">{{ u.nombre }} {{ u.apellido }}</td>
+      <td class="p-3 border border-gray-700">{{ u.correo }}</td>
+      <td class="p-3 border border-gray-700">{{ u.cargo }}</td>
+      <td class="p-3 border border-gray-700">{{ u.compania?.nombre || '—' }}</td>
+      <td class="p-3 border border-gray-700 text-right">
+        <app-dropdown-acciones [acciones]="getAcciones(u)"></app-dropdown-acciones>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal Formulario -->
+<div *ngIf="showForm" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-xl relative text-white">
+    <button (click)="closeForm()" class="absolute top-4 right-4 text-xl hover:text-red-400">✕</button>
+
+    <h2 class="text-lg font-semibold mb-4">
+      {{ selectedUsuario ? 'Editar usuario' : 'Registrar usuario' }}
+    </h2>
+
+    <app-usuario-form
+      [initialData]="selectedUsuario"
+      (onSubmit)="saveUsuario($event)"
+    ></app-usuario-form>
+
+    <div *ngIf="saving" class="fixed inset-0 z-50 flex items-center justify-center bg-[#000000cf]">
+      <app-loader /> Guardando
+    </div>
+  </div>
+</div>
+
+<!-- Modal detalles de producto -->
+<app-detalle-usuario
+  *ngIf="showDetalle && usuarioDetalle"
+  [usuario]="usuarioDetalle"
+  (onClose)="cerrarDetalle()"
+></app-detalle-usuario>
+
+
+<!-- Confirmar elimiar -->
+<app-confirmar-accion
+  *ngIf="alertaConfirmacion"
+  [mensaje]="'¿Eliminar Usuario?'"
+  [detalle]="'Estás seguro de eliminar: ' + usuarioAEliminar?.nombre"
+  (onConfirm)="eliminar()"
+  (onCancel)="cancelarEliminar()"
+></app-confirmar-accion>
+
+<!-- Aleta API -->
+<app-alerta-respuesta-api
+  *ngIf="alerta"
+  [tipo]="alerta.tipo"
+  [mensaje]="alerta.mensaje"
+  (onClose)="alerta = null"
+></app-alerta-respuesta-api>

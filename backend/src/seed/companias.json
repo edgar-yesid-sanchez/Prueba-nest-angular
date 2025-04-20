@@ -1,0 +1,82 @@
+[
+  {
+    "nombre": "Empresa 1",
+    "sector": "Tecnolog\u00eda",
+    "telefono": "3100000001",
+    "direccion": "Calle 1 # 2-3",
+    "activos": 103609,
+    "pasivos": 193682
+  },
+  {
+    "nombre": "Empresa 2",
+    "sector": "Log\u00edstica",
+    "telefono": "3100000002",
+    "direccion": "Calle 2 # 4-6",
+    "activos": 301327,
+    "pasivos": 101742
+  },
+  {
+    "nombre": "Empresa 3",
+    "sector": "Log\u00edstica",
+    "telefono": "3100000003",
+    "direccion": "Calle 3 # 6-9",
+    "activos": 299983,
+    "pasivos": 230491
+  },
+  {
+    "nombre": "Empresa 4",
+    "sector": "Finanzas",
+    "telefono": "3100000004",
+    "direccion": "Calle 4 # 8-12",
+    "activos": 140498,
+    "pasivos": 96356
+  },
+  {
+    "nombre": "Empresa 5",
+    "sector": "Finanzas",
+    "telefono": "3100000005",
+    "direccion": "Calle 5 # 10-15",
+    "activos": 363824,
+    "pasivos": 78809
+  },
+  {
+    "nombre": "Empresa 6",
+    "sector": "Tecnolog\u00eda",
+    "telefono": "3100000006",
+    "direccion": "Calle 6 # 12-18",
+    "activos": 371401,
+    "pasivos": 111798
+  },
+  {
+    "nombre": "Empresa 7",
+    "sector": "Finanzas",
+    "telefono": "3100000007",
+    "direccion": "Calle 7 # 14-21",
+    "activos": 483290,
+    "pasivos": 234764
+  },
+  {
+    "nombre": "Empresa 8",
+    "sector": "Finanzas",
+    "telefono": "3100000008",
+    "direccion": "Calle 8 # 16-24",
+    "activos": 168748,
+    "pasivos": 282720
+  },
+  {
+    "nombre": "Empresa 9",
+    "sector": "Tecnolog\u00eda",
+    "telefono": "3100000009",
+    "direccion": "Calle 9 # 18-27",
+    "activos": 453799,
+    "pasivos": 114976
+  },
+  {
+    "nombre": "Empresa 10",
+    "sector": "Tecnolog\u00eda",
+    "telefono": "3100000010",
+    "direccion": "Calle 10 # 20-30",
+    "activos": 436974,
+    "pasivos": 95635
+  }
+]

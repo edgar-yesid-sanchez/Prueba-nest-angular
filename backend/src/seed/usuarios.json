@@ -1,0 +1,202 @@
+[
+  {
+    "nombre": "Camila",
+    "apellido": "Ram\u00edrez",
+    "cargo": "Analista",
+    "salario": 5834,
+    "telefono": "3200000000",
+    "correo": "camila0@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Juan",
+    "apellido": "G\u00f3mez",
+    "cargo": "Coordinador",
+    "salario": 2385,
+    "telefono": "3200000001",
+    "correo": "juan1@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Laura",
+    "apellido": "Mart\u00ednez",
+    "cargo": "Coordinador",
+    "salario": 3689,
+    "telefono": "3200000002",
+    "correo": "laura2@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "Vargas",
+    "cargo": "Gerente",
+    "salario": 3674,
+    "telefono": "3200000003",
+    "correo": "carlos3@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Sof\u00eda",
+    "apellido": "L\u00f3pez",
+    "cargo": "Gerente",
+    "salario": 4985,
+    "telefono": "3200000004",
+    "correo": "sof\u00eda4@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Diego",
+    "apellido": "Morales",
+    "cargo": "Coordinador",
+    "salario": 2052,
+    "telefono": "3200000005",
+    "correo": "diego5@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Valentina",
+    "apellido": "Torres",
+    "cargo": "Gerente",
+    "salario": 7735,
+    "telefono": "3200000006",
+    "correo": "valentina6@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Mateo",
+    "apellido": "R\u00edos",
+    "cargo": "Coordinador",
+    "salario": 5022,
+    "telefono": "3200000007",
+    "correo": "mateo7@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Isabella",
+    "apellido": "Mendoza",
+    "cargo": "Analista",
+    "salario": 2778,
+    "telefono": "3200000008",
+    "correo": "isabella8@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Andr\u00e9s",
+    "apellido": "S\u00e1nchez",
+    "cargo": "Gerente",
+    "salario": 6576,
+    "telefono": "3200000009",
+    "correo": "andr\u00e9s9@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Camila",
+    "apellido": "Ram\u00edrez",
+    "cargo": "Gerente",
+    "salario": 5713,
+    "telefono": "3200000010",
+    "correo": "camila10@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Juan",
+    "apellido": "G\u00f3mez",
+    "cargo": "Analista",
+    "salario": 6584,
+    "telefono": "3200000011",
+    "correo": "juan11@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Laura",
+    "apellido": "Mart\u00ednez",
+    "cargo": "Desarrollador",
+    "salario": 6774,
+    "telefono": "3200000012",
+    "correo": "laura12@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "Vargas",
+    "cargo": "Desarrollador",
+    "salario": 5077,
+    "telefono": "3200000013",
+    "correo": "carlos13@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Sof\u00eda",
+    "apellido": "L\u00f3pez",
+    "cargo": "Coordinador",
+    "salario": 4760,
+    "telefono": "3200000014",
+    "correo": "sof\u00eda14@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Diego",
+    "apellido": "Morales",
+    "cargo": "Gerente",
+    "salario": 2195,
+    "telefono": "3200000015",
+    "correo": "diego15@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Valentina",
+    "apellido": "Torres",
+    "cargo": "Coordinador",
+    "salario": 2928,
+    "telefono": "3200000016",
+    "correo": "valentina16@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Mateo",
+    "apellido": "R\u00edos",
+    "cargo": "Coordinador",
+    "salario": 2619,
+    "telefono": "3200000017",
+    "correo": "mateo17@correo.com",
+    "password": "123456",
+    "rol": "user"
+  },
+  {
+    "nombre": "Isabella",
+    "apellido": "Mendoza",
+    "cargo": "Gerente",
+    "salario": 6506,
+    "telefono": "3200000018",
+    "correo": "isabella18@correo.com",
+    "password": "123456",
+    "rol": "admin"
+  },
+  {
+    "nombre": "Andr\u00e9s",
+    "apellido": "S\u00e1nchez",
+    "cargo": "Analista",
+    "salario": 2333,
+    "telefono": "3200000019",
+    "correo": "andr\u00e9s19@correo.com",
+    "password": "123456",
+    "rol": "user"
+  }
+]

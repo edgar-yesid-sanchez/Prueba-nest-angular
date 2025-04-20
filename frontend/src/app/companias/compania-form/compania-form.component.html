@@ -1,0 +1,145 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5">
+  <!-- Nombre -->
+  <div>
+    <label for="nombre" class="block text-sm font-medium text-gray-300">Nombre</label>
+    <input
+      id="nombre"
+      type="text"
+      formControlName="nombre"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('nombre')?.valid || !form.get('nombre')?.touched,
+        'border-red-500 ring-red-500': form.get('nombre')?.invalid && form.get('nombre')?.touched
+      }"
+    />
+    <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Sector -->
+  <div>
+    <label for="sector" class="block text-sm font-medium text-gray-300">Sector</label>
+    <input
+      id="sector"
+      type="text"
+      formControlName="sector"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('sector')?.valid || !form.get('sector')?.touched,
+        'border-red-500 ring-red-500': form.get('sector')?.invalid && form.get('sector')?.touched
+      }"
+    />
+    <div *ngIf="form.get('sector')?.invalid && form.get('sector')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Teléfono -->
+  <div>
+    <label for="telefono" class="block text-sm font-medium text-gray-300">Teléfono</label>
+    <input
+      id="telefono"
+      type="text"
+      formControlName="telefono"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('telefono')?.valid || !form.get('telefono')?.touched,
+        'border-red-500 ring-red-500': form.get('telefono')?.invalid && form.get('telefono')?.touched
+      }"
+    />
+    <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Dirección -->
+  <div>
+    <label for="direccion" class="block text-sm font-medium text-gray-300">Dirección</label>
+    <input
+      id="direccion"
+      type="text"
+      formControlName="direccion"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('direccion')?.valid || !form.get('direccion')?.touched,
+        'border-red-500 ring-red-500': form.get('direccion')?.invalid && form.get('direccion')?.touched
+      }"
+    />
+    <div *ngIf="form.get('direccion')?.invalid && form.get('direccion')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Activos -->
+  <div>
+    <label for="activos" class="block text-sm font-medium text-gray-300">Activos</label>
+    <input
+      id="activos"
+      type="number"
+      formControlName="activos"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('activos')?.valid || !form.get('activos')?.touched,
+        'border-red-500 ring-red-500': form.get('activos')?.invalid && form.get('activos')?.touched
+      }"
+    />
+    <div *ngIf="form.get('activos')?.invalid && form.get('activos')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Pasivos -->
+  <div>
+    <label for="pasivos" class="block text-sm font-medium text-gray-300">Pasivos</label>
+    <input
+      id="pasivos"
+      type="number"
+      formControlName="pasivos"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+      [ngClass]="{
+        'border-gray-600': form.get('')?.valid || !form.get('')?.touched,
+        'border-red-500 ring-red-500': form.get('')?.invalid && form.get('')?.touched
+      }"
+    />
+    <div *ngIf="form.get('')?.invalid && form.get('')?.touched" class="text-red-400 text-sm mt-1">
+      El campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Departamento -->
+  <div>
+    <label for="departamentoId" class="block text-sm font-medium text-gray-300">Departamento</label>
+    <select
+      id="departamentoId"
+      formControlName="departamentoId"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white"
+    >
+      <option value="">Selecciona un departamento</option>
+      <option *ngFor="let d of departamentos" [value]="d.id">{{ d.nombre }}</option>
+    </select>
+  </div>
+
+  <!-- Ciudad -->
+  <div>
+    <label for="ciudadId" class="block text-sm font-medium text-gray-300">Ciudad</label>
+    <select
+      id="ciudadId"
+      formControlName="ciudadId"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white"
+      [disabled]="!ciudades.length"
+    >
+      <option value="">Selecciona una ciudad</option>
+      <option *ngFor="let c of ciudades" [value]="c.id">{{ c.nombre }}</option>
+    </select>
+  </div>
+
+  <!-- Botón -->
+  <button
+    type="submit"
+    [disabled]="form.invalid"
+    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition duration-300 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+  >
+    Guardar
+  </button>
+</form>

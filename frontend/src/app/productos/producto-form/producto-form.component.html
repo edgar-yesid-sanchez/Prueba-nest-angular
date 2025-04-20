@@ -1,0 +1,51 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5 text-sm">
+  <div>
+    <label for="nombre" class="block text-gray-400">Nombre del producto</label>
+    <input
+      id="nombre"
+      type="text"
+      formControlName="nombre"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div>
+    <label for="categoria" class="block text-gray-400">Categoría</label>
+    <input
+      id="categoria"
+      type="text"
+      formControlName="categoria"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div>
+    <label for="precio" class="block text-gray-400">Precio</label>
+    <input
+      id="precio"
+      type="number"
+      formControlName="precio"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div>
+    <label for="companiaId" class="block text-gray-400">Compañía</label>
+    <select
+      id="companiaId"
+      formControlName="companiaId"
+      class="mt-1 w-full rounded-md border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="">Selecciona una compañía</option>
+      <option *ngFor="let c of companias" [value]="c.id">{{ c.nombre }}</option>
+    </select>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="form.invalid"
+    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-full"
+  >
+    Guardar
+  </button>
+</form>

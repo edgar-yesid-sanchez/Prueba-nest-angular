@@ -1,0 +1,102 @@
+[
+  {
+    "nombre": "Producto A",
+    "categoria": "Software",
+    "precio": 277
+  },
+  {
+    "nombre": "Producto B",
+    "categoria": "Servicio",
+    "precio": 358
+  },
+  {
+    "nombre": "Producto C",
+    "categoria": "Hardware",
+    "precio": 314
+  },
+  {
+    "nombre": "Producto D",
+    "categoria": "Software",
+    "precio": 118
+  },
+  {
+    "nombre": "Producto E",
+    "categoria": "Consultor\u00eda",
+    "precio": 448
+  },
+  {
+    "nombre": "Producto F",
+    "categoria": "Consultor\u00eda",
+    "precio": 148
+  },
+  {
+    "nombre": "Producto G",
+    "categoria": "Consultor\u00eda",
+    "precio": 482
+  },
+  {
+    "nombre": "Producto H",
+    "categoria": "Servicio",
+    "precio": 430
+  },
+  {
+    "nombre": "Producto I",
+    "categoria": "Hardware",
+    "precio": 475
+  },
+  {
+    "nombre": "Producto J",
+    "categoria": "Consultor\u00eda",
+    "precio": 428
+  },
+  {
+    "nombre": "Producto K",
+    "categoria": "Software",
+    "precio": 453
+  },
+  {
+    "nombre": "Producto L",
+    "categoria": "Hardware",
+    "precio": 282
+  },
+  {
+    "nombre": "Producto M",
+    "categoria": "Software",
+    "precio": 472
+  },
+  {
+    "nombre": "Producto N",
+    "categoria": "Software",
+    "precio": 53
+  },
+  {
+    "nombre": "Producto O",
+    "categoria": "Software",
+    "precio": 300
+  },
+  {
+    "nombre": "Producto P",
+    "categoria": "Hardware",
+    "precio": 226
+  },
+  {
+    "nombre": "Producto Q",
+    "categoria": "Software",
+    "precio": 300
+  },
+  {
+    "nombre": "Producto R",
+    "categoria": "Servicio",
+    "precio": 345
+  },
+  {
+    "nombre": "Producto S",
+    "categoria": "Servicio",
+    "precio": 4630
+  },
+  {
+    "nombre": "Producto T",
+    "categoria": "Hardware",
+    "precio": 4020
+  }
+]

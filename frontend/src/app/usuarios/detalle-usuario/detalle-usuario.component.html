@@ -1,0 +1,20 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+  <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-xl relative text-white">
+    <button (click)="cerrar()" class="absolute top-4 right-4 text-xl hover:text-red-400">✕</button>
+
+    <h2 class="text-2xl font-semibold mb-4">Detalle del usuario</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-8">
+      <div class="space-y-2">
+        <p><span class="text-gray-400">Nombre:</span><br><span class="font-medium">{{ usuario?.nombre }} {{ usuario?.apellido }}</span></p>
+        <p><span class="text-gray-400">Cargo:</span><br><span class="font-medium">{{ usuario?.cargo }}</span></p>
+        <p><span class="text-gray-400">Rol:</span><br><span class="font-medium">{{ usuario?.rol }}</span></p>
+      </div>
+      <div class="space-y-2">
+        <p><span class="text-gray-400">Correo:</span><br><span class="font-medium">{{ usuario?.correo }}</span></p>
+        <p><span class="text-gray-400">Teléfono:</span><br><span class="font-medium">{{ usuario?.telefono }}</span></p>
+        <p><span class="text-gray-400">Compañía:</span><br><span class="font-medium">{{ usuario?.compania?.nombre || '—' }}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

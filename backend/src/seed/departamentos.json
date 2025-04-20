@@ -1,0 +1,37 @@
+[
+  {
+    "nombre": "Cundinamarca",
+    "ciudades": [
+      { "nombre": "Bogotá" },
+      { "nombre": "Soacha" }
+    ]
+  },
+  {
+    "nombre": "Antioquia",
+    "ciudades": [
+      { "nombre": "Medellín" },
+      { "nombre": "Envigado" }
+    ]
+  },
+  {
+    "nombre": "Valle del Cauca",
+    "ciudades": [
+      { "nombre": "Cali" },
+      { "nombre": "Palmira" }
+    ]
+  },
+  {
+    "nombre": "Santander",
+    "ciudades": [
+      { "nombre": "Bucaramanga" },
+      { "nombre": "Floridablanca" }
+    ]
+  },
+  {
+    "nombre": "Bolívar",
+    "ciudades": [
+      { "nombre": "Cartagena" },
+      { "nombre": "Magangué" }
+    ]
+  }
+]

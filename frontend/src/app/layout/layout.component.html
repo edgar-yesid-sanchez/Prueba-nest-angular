@@ -1,0 +1,72 @@
+<div class="flex flex-col md:flex-row min-h-screen bg-gray-900 text-white">
+  <!-- Mobile Header -->
+  <header class="md:hidden flex justify-between items-center bg-gray-800 p-4">
+    <h2 class="text-xl font-bold">FletX</h2>
+    <button 
+      (click)="sidebarOpen = !sidebarOpen" 
+      class="text-white text-xl focus:outline-none"
+      aria-label="Toggle Sidebar"
+    >
+      ☰
+    </button>
+  </header>
+
+  <!-- Sidebar -->
+  <aside
+    class="transform transition-transform duration-300 ease-in-out flex flex-col justify-between w-64 bg-gray-800 p-5 space-y-6 min-h-screen md:relative  max-md:absolute z-40"
+    [ngClass]="{
+      '-translate-x-full': !sidebarOpen,
+      'translate-x-0': sidebarOpen,
+      'md:translate-x-0': true
+    }"
+  >
+    <div>
+      <h2 class="text-2xl font-bold mb-6">FletX</h2>
+      <nav class="space-y-4">
+        <a
+          routerLink="companias"
+          routerLinkActive="text-blue-400"
+          class="block hover:text-blue-300 cursor-pointer"
+        >
+          Compañías
+        </a>
+        <a
+          routerLink="productos"
+          routerLinkActive="text-blue-400"
+          class="block hover:text-blue-300 cursor-pointer"
+        >
+          Productos
+        </a>
+        <a
+          routerLink="usuarios"
+          routerLinkActive="text-blue-400"
+          class="block hover:text-blue-300 cursor-pointer"
+        >
+          Usuarios
+        </a>
+      </nav>
+    </div>
+    <div class="flex justify-between">
+      <div *ngIf="usuarioActual" class="text-sm text-gray-400 mb-2">
+        <p>{{ usuarioActual.correo }}</p>
+        <p>{{ usuarioActual.rol }}</p>
+      </div>
+      <button (click)="logout()" class="text-red-400 hover:text-red-600">
+        Salir
+      </button>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="p-8 w-full overflow-y-auto h-[calc(100vh-0px)]">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!-- Alerta de para el Gaurd -->
+<app-alerta-respuesta-api
+  *ngIf="alerta"
+  [tipo]="alerta.tipo"
+  [mensaje]="alerta.mensaje"
+  (onClose)="alertaService.cerrar()"
+/>

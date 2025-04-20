@@ -1,0 +1,11 @@
+<div
+  class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[9999] px-6 py-4 rounded shadow-lg flex items-center space-x-4 text-sm max-w-sm w-full"
+  [ngClass]="{
+    'bg-red-600 text-white': tipo === 'error',
+    'bg-green-600 text-white': tipo === 'success',
+    'bg-yellow-500 text-black': tipo === 'warning'
+  }"
+>
+  <span class="flex-1">{{ mensaje }}</span>
+  <button (click)="cerrar()" class="text-white font-bold text-lg">&times;</button>
+</div>

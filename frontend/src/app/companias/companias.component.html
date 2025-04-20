@@ -1,0 +1,84 @@
+<section class="flex items-center justify-between mb-4">
+  <h1 class="text-2xl font-bold">Compañías</h1>
+  <button (click)="agregarCompania()" class="bg-green-600 px-4 py-1 rounded text-white cursor-pointer">
+    Agregar
+  </button>
+</section>
+
+
+<div *ngIf="loading">
+  <app-loader />
+</div>
+
+
+<table *ngIf="!loading" class="w-full text-left border-collapse border border-gray-700">
+  <thead class="bg-gray-800">
+    <tr>
+      <th class="p-3 border border-gray-700">Compañia</th>
+      <th class="p-3 border border-gray-700">Sector</th>
+      <th class="p-3 border border-gray-700">Ciudad</th>
+      <th class="p-3 border border-gray-700 w-1">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of companias" class="hover:bg-gray-800">
+     
+      <td class="p-3 border border-gray-700">{{ c.nombre }}</td>
+      <td class="p-3 border border-gray-700">{{ c.sector }}</td>
+      <td class="p-3 border border-gray-700">{{ c.ciudad?.nombre }}</td>
+      <td class="p-3 border border-gray-700 whitespace-nowrap w-1">
+        <app-dropdown-acciones [acciones]="getAcciones(c)"></app-dropdown-acciones>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Modal  formulario crear/editar -->
+<div *ngIf="showForm" class="fixed inset-0 z-50 flex items-center justify-center bg-[#000000cf]">
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-2xl relative">
+    <!-- Botón cerrar -->
+    <button
+      class="absolute top-4 right-4 text-white hover:text-red-500 text-xl font-bold cursor-pointer"
+      (click)="closeForm()"
+    >✕</button>
+
+    <h2 class="text-lg font-semibold text-white mb-4">
+      {{ selectedCompania ? 'Editar compañía' : 'Crear nueva compañía' }}
+    </h2>
+
+    <!-- Formulario -->
+    <app-compania-form
+      [initialData]="selectedCompania"
+      (onSubmit)="saveCompania($event)">
+    </app-compania-form>
+
+    <div *ngIf="saving" class="fixed inset-0 z-50 flex items-center justify-center bg-[#000000cf]">
+      <app-loader />
+    </div>
+  </div>
+</div>
+
+<!-- Modal ver detalle -->
+<app-detalle-compania
+  *ngIf="showDetalle && selectedCompania"
+  [compania]="selectedCompania"
+  (onClose)="cerrarDetalle()"
+></app-detalle-compania>
+
+<!-- Confirmar elimiar -->
+<app-confirmar-accion
+  *ngIf="alertaConfirmacion"
+  [mensaje]="'¿Eliminar Compañia'"
+  [detalle]="'Estás seguro de eliminar: ' + companiaAEliminar?.nombre"
+  (onConfirm)="eliminar()"
+  (onCancel)="cancelarEliminar()"
+></app-confirmar-accion>
+
+<!-- Aleta API -->
+<app-alerta-respuesta-api
+  *ngIf="alerta"
+  [tipo]="alerta.tipo"
+  [mensaje]="alerta.mensaje"
+  (onClose)="alerta = null"
+></app-alerta-respuesta-api>
