@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class ProductosApiService {
-  private baseUrl = 'http://localhost:3000/productos';
+  private baseUrl = 'https://prueba-nest-angular.onrender.com/productos';
 
   constructor(private http: HttpClient) {}
 

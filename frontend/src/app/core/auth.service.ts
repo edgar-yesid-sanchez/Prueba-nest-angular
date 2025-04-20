@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private api = 'http://localhost:3000/auth'; // tu backend
+  private api = 'https://prueba-nest-angular.onrender.com/auth'; // tu backend
 
   constructor(private http: HttpClient) {}
 

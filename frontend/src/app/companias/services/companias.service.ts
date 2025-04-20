@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class CompaniasService {
-  private api = 'http://localhost:3000/companias';
+  private api = 'https://prueba-nest-angular.onrender.com/companias';
 
   constructor(private http: HttpClient) {}
 

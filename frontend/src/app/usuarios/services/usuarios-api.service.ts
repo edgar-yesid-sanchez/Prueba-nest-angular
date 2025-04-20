@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsuariosApiService {
-  private baseUrl = 'http://localhost:3000/usuarios';
+  private baseUrl = 'https://prueba-nest-angular.onrender.com/usuarios';
 
   constructor(private http: HttpClient) {}
 

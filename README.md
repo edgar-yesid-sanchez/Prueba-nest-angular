@@ -1,6 +1,16 @@
 # Prueba Full stack Nestjs y Angular
-
 Web y back end con CRUD para diferentes tablas, Guard para rutas , autenticacion con JWT para consumo de la API y documentacion con Swagger
+
+# Probar proyecto
+El front esta desplegado en Netlify, con la url: https://steady-fudge-bd5bc5.netlify.app
+El back esnta alojado en render
+
+Para ingresar : 
+usuario admin: admin@correo / 123456
+usuario normal: user@correo.com / 123456
+
+Los usuarios con rol 'admin' pueden hacer todo el CRUD de comañias, usuarios y productos
+LÑos usuarios con rol 'user' solo pueden ver y se bloqeuo la ruta de ver usuarios por Guard para 
 
 ## Tecnologías utilizadas
 

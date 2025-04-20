@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UbicacionService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'https://prueba-nest-angular.onrender.com';
 
   constructor(private http: HttpClient) {}
 
